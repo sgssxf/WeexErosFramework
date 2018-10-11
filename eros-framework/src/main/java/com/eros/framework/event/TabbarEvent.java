@@ -70,7 +70,7 @@ public class TabbarEvent extends EventGate {
         String index = JSON.parseObject(weexEventBean.getJsParams()).get("index").toString();
         RouterTracker.clearActivitySurplus(1);
         Activity activity = RouterTracker.peekActivity();
-        if (activity instanceof MainActivity) {
+        if (context instanceof MainActivity) {
             ((MainActivity) activity).openPage(Integer.parseInt(index));
         }
     }
